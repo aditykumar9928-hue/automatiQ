@@ -38,8 +38,10 @@ export default function Hero() {
 
       <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6">
         <div className="reveal mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-sm text-slate-200 backdrop-blur-md">
-          <Sparkles className="h-4 w-4 text-glow-400" />
-          AI Automation Agency
+          <Sparkles className="h-4 w-4 text-glow-400 animate-icon-bob" />
+          <span className="word-wave" style={{ animationDelay: '0ms' }}>AI</span>
+          <span className="word-wave" style={{ animationDelay: '220ms' }}>Automation</span>
+          <span className="word-wave" style={{ animationDelay: '440ms' }}>Agency</span>
         </div>
 
         <h1

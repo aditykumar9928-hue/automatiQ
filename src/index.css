@@ -61,6 +61,25 @@
   100% { background-position: 220% center; }
 }
 
+@keyframes word-wave {
+  0%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-4px); }
+}
+
+@keyframes icon-bob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-3px) rotate(8deg); }
+}
+
+.word-wave {
+  display: inline-block;
+  animation: word-wave 2.4s ease-in-out infinite;
+}
+
+.animate-icon-bob {
+  animation: icon-bob 2.4s ease-in-out infinite;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -232,7 +251,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
-  .animate-float, .animate-float-slow, .animate-pulse-glow { animation: none; }
-  .text-gradient { animation: none; }
+  .animate-float, .animate-float-slow, .animate-pulse-glow, .animate-icon-bob { animation: none; }
+  .text-gradient, .word-wave { animation: none; }
   html { scroll-behavior: auto; }
 }
