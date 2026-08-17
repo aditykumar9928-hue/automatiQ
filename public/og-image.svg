@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#05060f"/>
+      <stop offset="0.55" stop-color="#0a0b1e"/>
+      <stop offset="1" stop-color="#11132e"/>
+    </linearGradient>
+    <radialGradient id="orb1" cx="0.15" cy="0.2" r="0.4">
+      <stop offset="0" stop-color="#2f63f5" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#2f63f5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb2" cx="0.85" cy="0.7" r="0.45">
+      <stop offset="0" stop-color="#7c3aed" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="q" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2f63f5"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="text" x1="0" y1="0" x2="700" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.5" stop-color="#b6cfff"/>
+      <stop offset="1" stop-color="#c4b5fd"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#orb1)"/>
+  <rect width="1200" height="630" fill="url(#orb2)"/>
+
+  <!-- Logo mark -->
+  <g transform="translate(140 180)">
+    <rect width="64" height="64" rx="14" fill="#0a0b1e" stroke="url(#q)" stroke-width="2" opacity="0.9"/>
+    <path d="M22 14h-6v36h22v-6H22V14z" fill="#fff"/>
+    <path d="M34 38c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10zm16 0a6 6 0 1 0-12 0 6 6 0 0 0 12 0z" fill="url(#q)"/>
+    <circle cx="44" cy="38" r="6" fill="#fff"/>
+    <path d="M44 44l4 7-4-2-4 2 4-7z" fill="url(#q)"/>
+  </g>
+  <text x="222" y="228" font-family="Inter, sans-serif" font-size="40" font-weight="700" fill="#ffffff">Automati<tspan fill="url(#q)">Q</tspan></text>
+
+  <!-- Headline -->
+  <text x="140" y="340" font-family="Inter, sans-serif" font-size="76" font-weight="700" fill="url(#text)" letter-spacing="-2">Automate the busywork.</text>
+  <text x="140" y="420" font-family="Inter, sans-serif" font-size="76" font-weight="700" fill="url(#text)" letter-spacing="-2">Scale with intelligence.</text>
+
+  <!-- Subline -->
+  <text x="140" y="480" font-family="Inter, sans-serif" font-size="28" font-weight="500" fill="#cbd5e1">AI Chatbots · Calling &amp; WhatsApp Agents · Workflow Automation</text>
+
+  <!-- Badge -->
+  <rect x="140" y="520" width="300" height="48" rx="24" fill="#2f63f5" opacity="0.18" stroke="#2f63f5" stroke-opacity="0.4" stroke-width="1.5"/>
+  <text x="290" y="551" font-family="Inter, sans-serif" font-size="20" font-weight="600" fill="#b6cfff" text-anchor="middle">Book a Free Call</text>
+</svg>

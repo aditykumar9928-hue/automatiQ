@@ -1,0 +1,17 @@
+{
+  "name": "AutomatiQ — AI Automation Agency",
+  "short_name": "AutomatiQ",
+  "description": "AI automation agency building AI chatbots, calling agents, WhatsApp agents, and workflow automation that save your team thousands of hours.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#05060f",
+  "theme_color": "#0a0b1e",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

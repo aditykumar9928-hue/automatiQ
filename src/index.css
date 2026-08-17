@@ -1,0 +1,230 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI',
+    Roboto, Helvetica, Arial, sans-serif;
+
+  /* Deep blue / purple / black backdrop ramps */
+  --color-ink-950: #05060f;
+  --color-ink-900: #0a0b1e;
+  --color-ink-800: #11132e;
+  --color-ink-700: #1a1d44;
+
+  /* Primary — electric blue */
+  --color-brand-50: #eef4ff;
+  --color-brand-100: #d9e6ff;
+  --color-brand-200: #b6cfff;
+  --color-brand-300: #84b0ff;
+  --color-brand-400: #4f87ff;
+  --color-brand-500: #2f63f5;
+  --color-brand-600: #1b48e0;
+  --color-brand-700: #1738b4;
+  --color-brand-800: #182f8c;
+  --color-brand-900: #1a2c70;
+
+  /* Accent — violet glow */
+  --color-glow-300: #c4b5fd;
+  --color-glow-400: #a78bfa;
+  --color-glow-500: #8b5cf6;
+  --color-glow-600: #7c3aed;
+
+  /* Secondary accent — cyan */
+  --color-aqua-300: #7dd3fc;
+  --color-aqua-400: #38bdf8;
+  --color-aqua-500: #0ea5e9;
+
+  --color-success-400: #4ade80;
+  --color-success-500: #22c55e;
+  --color-warning-400: #fbbf24;
+  --color-error-400: #f87171;
+
+  --shadow-glow-sm: 0 0 18px -4px rgba(79, 135, 255, 0.45);
+  --shadow-glow: 0 0 38px -6px rgba(99, 102, 241, 0.55);
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-float-slow: float 11s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-22px) translateX(10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.08); }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-ink-950);
+    color: #e6e8f5;
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(99, 102, 241, 0.4);
+    color: #fff;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: var(--color-ink-950); }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--color-brand-600), var(--color-glow-600));
+    border-radius: 9999px;
+    border: 2px solid var(--color-ink-950);
+  }
+}
+
+@layer components {
+  /* Frosted glass surface */
+  .glass {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.02)
+    );
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow:
+      0 8px 32px -8px rgba(0, 0, 0, 0.6),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-strong {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.04)
+    );
+    backdrop-filter: blur(22px) saturate(150%);
+    -webkit-backdrop-filter: blur(22px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow:
+      0 12px 40px -10px rgba(0, 0, 0, 0.7),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
+  }
+
+  /* Gradient text */
+  .text-gradient {
+    background: linear-gradient(
+      120deg,
+      #ffffff 0%,
+      var(--color-brand-200) 40%,
+      var(--color-glow-300) 70%,
+      #ffffff 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .text-gradient-brand {
+    background: linear-gradient(
+      120deg,
+      var(--color-brand-400),
+      var(--color-glow-400)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* Primary glowing button */
+  .btn-primary {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    padding: 0.85rem 1.6rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(
+      120deg,
+      var(--color-brand-500),
+      var(--color-glow-600)
+    );
+    box-shadow:
+      0 8px 24px -6px rgba(99, 102, 241, 0.6),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+    box-shadow:
+      0 14px 34px -6px rgba(99, 102, 241, 0.75),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
+  }
+  .btn-primary:active { transform: translateY(0); }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    padding: 0.85rem 1.6rem;
+    font-weight: 600;
+    color: #e6e8f5;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
+    transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+  }
+  .btn-ghost:hover {
+    border-color: rgba(167, 139, 250, 0.55);
+    background: rgba(167, 139, 250, 0.1);
+    transform: translateY(-2px);
+  }
+
+  /* Subtle grid/aurora background helpers */
+  .bg-aurora {
+    background:
+      radial-gradient(60% 50% at 15% 10%, rgba(47, 99, 245, 0.28), transparent 70%),
+      radial-gradient(50% 45% at 85% 15%, rgba(139, 92, 246, 0.26), transparent 70%),
+      radial-gradient(55% 60% at 70% 90%, rgba(14, 165, 233, 0.18), transparent 70%),
+      var(--color-ink-950);
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+}
+
+/* Scroll-reveal: elements start hidden, animate in when .is-visible is added */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .animate-float, .animate-float-slow, .animate-pulse-glow { animation: none; }
+  html { scroll-behavior: auto; }
+}
