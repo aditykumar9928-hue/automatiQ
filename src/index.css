@@ -56,6 +56,11 @@
   50% { opacity: 0.9; transform: scale(1.08); }
 }
 
+@keyframes text-shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 220% center; }
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -125,10 +130,12 @@
       var(--color-glow-300) 70%,
       #ffffff 100%
     );
+    background-size: 220% auto;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
+    animation: text-shimmer 6s linear infinite;
   }
 
   .text-gradient-brand {
@@ -226,5 +233,6 @@
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   .animate-float, .animate-float-slow, .animate-pulse-glow { animation: none; }
+  .text-gradient { animation: none; }
   html { scroll-behavior: auto; }
 }
